@@ -24,6 +24,8 @@ dependencies:
   flutter_animate: ^4.5.0
   iconsax: ^0.0.8
   linear_timer: ^2.0.0
+
+  # state management and dependecy managers
   flutter_bloc: ^8.1.6
   get_it: ^8.0.2
 
