@@ -24,6 +24,7 @@ dependencies:
   flutter_animate: ^4.5.0
   iconsax: ^0.0.8
   linear_timer: ^2.0.0
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:
