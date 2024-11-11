@@ -1,4 +1,4 @@
-# flu_share
+# androp
 
 An application to allow sharing between Android and Macos.
 
