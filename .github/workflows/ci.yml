@@ -1,0 +1,25 @@
+name: Androp CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main # This triggers the build on the master branch after the PR is merged.
+
+jobs:
+  flutter_test:
+    name: Flutter test and analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "17.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: dart format .
