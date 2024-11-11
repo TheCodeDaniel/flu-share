@@ -1,4 +1,4 @@
-package com.flu_share.flu_share
+package com.androp
 
 import io.flutter.embedding.android.FlutterActivity
 
