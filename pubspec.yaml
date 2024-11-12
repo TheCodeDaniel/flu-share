@@ -1,4 +1,4 @@
-name: androp
+name: flushare
 description: "An application to allow sharing between Android and Macos."
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev

@@ -1,4 +1,4 @@
-import 'package:androp/app.dart';
+import 'package:flushare/app.dart';
 import 'package:flutter/material.dart';
 
 void main() {

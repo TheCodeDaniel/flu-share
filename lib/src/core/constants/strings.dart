@@ -1,4 +1,4 @@
 class Strings {
-  static String appName = "Androp";
-  static String androp = "androp";
+  static String appName = "Flushare";
+  static String flushare = "flushare";
 }

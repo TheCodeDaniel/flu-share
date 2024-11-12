@@ -1,4 +1,4 @@
-import 'package:androp/src/config/theme/app_theme.dart';
+import 'package:flushare/src/config/theme/app_theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

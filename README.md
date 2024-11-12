@@ -1,9 +1,9 @@
-# androp
+# flushare
 
 An application to allow sharing between Android and Macos.
 
-As for the name "Androp", it comes from two words, "Android" and "Airdop",
-and just like fusion in DBZ, you get an all new powerful warrior "Androp"
+As for the name "flushare", it comes from two words, "Android" and "Airdop",
+and just like fusion in DBZ, you get an all new powerful warrior "flushare"
 
 ## Getting Started
 
@@ -20,4 +20,4 @@ Yes, Bloc, it's not overkill..(smiles)..
 Well for now, the app is just trying to create an Aidrop alternative for android users,
 Connecting a wire is not always so convinient from guys who use a mac with an android device.
 
-Eventually, "maybe" Androp will expand to linux too, that's why the linux folder remains in the project
+Eventually, "maybe" flushare will expand to linux too, that's why the linux folder remains in the project
