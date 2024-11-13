@@ -1,4 +1,5 @@
 import 'package:flushare/src/config/theme/app_colors.dart';
+import 'package:flushare/src/core/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -24,7 +25,7 @@ class ReceiveSectionView extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                "Receive a file",
+                Strings.receiveAFile,
                 style: TextStyle(
                   fontSize: 20,
                 ),

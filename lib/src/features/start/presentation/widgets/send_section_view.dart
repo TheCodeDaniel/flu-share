@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flushare/src/core/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -19,7 +20,7 @@ class SendSectionView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Send a file",
+                Strings.sendAFile,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
