@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flushare/src/core/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,7 +11,7 @@ class SendSectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Container(
-      height: size.height * 0.5,
+      height: Platform.isMacOS ? size.height * 0.5 : size.height * 0.4,
       width: size.width,
       decoration: BoxDecoration(color: Colors.black),
       child: Center(
@@ -17,7 +20,7 @@ class SendSectionView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Send a file",
+                Strings.sendAFile,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

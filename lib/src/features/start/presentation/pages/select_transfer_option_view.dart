@@ -15,7 +15,6 @@ class SelectTransferOptionView extends StatelessWidget {
         onPressed: () {},
       ),
       body: SafeArea(
-        top: false,
         bottom: false,
         child: Column(
           children: [
