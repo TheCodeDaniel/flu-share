@@ -34,9 +34,23 @@ dependencies:
   flutter_bloc: ^8.1.6
   get_it: ^8.0.2
 
+  # general/ utilities
+  flutter_lints: ^5.0.0
+
 dev_dependencies:
+  flutter_launcher_icons: "^0.14.1"
+
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/images/flushare_icon.png"
+  min_sdk_android: 21
+
+  macos:
+    generate: true
+    image_path: "assets/images/flushare_icon.png"
 
   flutter_lints: ^4.0.0
 
