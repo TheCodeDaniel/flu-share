@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flushare/src/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,7 +16,7 @@ class AppTheme {
 
   // light mode theme color
   static ThemeData themeData = ThemeData.light(
-    useMaterial3: Platform.isMacOS ? false : true,
+    useMaterial3: false,
   ).copyWith(
     primaryColor: AppColors.primaryColor,
     datePickerTheme: DatePickerThemeData(

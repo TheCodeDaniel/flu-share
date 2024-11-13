@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,7 +10,7 @@ class SendSectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Container(
-      height: size.height * 0.5,
+      height: Platform.isMacOS ? size.height * 0.5 : size.height * 0.4,
       width: size.width,
       decoration: BoxDecoration(color: Colors.black),
       child: Center(
