@@ -1,5 +1,5 @@
-import 'package:flushare/src/features/start/presentation/widgets/receive_section_view.dart';
-import 'package:flushare/src/features/start/presentation/widgets/send_section_view.dart';
+import 'package:flushare/src/features/home/presentation/widgets/receive_section_view.dart';
+import 'package:flushare/src/features/home/presentation/widgets/send_section_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

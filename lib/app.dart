@@ -1,5 +1,5 @@
 import 'package:flushare/src/config/theme/app_theme.dart';
-import 'package:flushare/src/features/start/presentation/pages/select_transfer_option_view.dart';
+import 'package:flushare/src/features/home/presentation/pages/select_transfer_option_view.dart';
 import 'package:flutter/material.dart';
 
 class AppInit {
