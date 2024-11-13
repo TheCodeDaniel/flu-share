@@ -1,4 +1,5 @@
 import 'package:flushare/src/config/theme/app_theme.dart';
+import 'package:flushare/src/features/start/presentation/pages/select_transfer_option_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _MyAppState extends State<MyApp> {
       locale: const Locale('en'),
       debugShowCheckedModeBanner: kDebugMode,
       theme: AppTheme.themeData,
-      home: const Scaffold(),
+      home: const SelectTransferOptionView(),
     );
   }
 }
