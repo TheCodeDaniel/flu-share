@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flushare/src/core/constants/bool_modes.dart';
 import 'package:flutter/services.dart';
 
 class WifiHandler {
@@ -8,19 +9,22 @@ class WifiHandler {
 
   Future<void> startWifiDirect() async {
     try {
-      final result = await platform.invokeMethod('startWifiDirect');
+      final result = await platform.invokeMethod(
+        kIsDesktop ? 'startNetworkListener' : 'startWifiDirect',
+      );
       log(result.toString()); // Output: "Discovery started"
     } on PlatformException catch (e) {
       log("Failed to start Wi-Fi Direct: '${e.message}'.");
     }
   }
 
-  Future<void> connectToPeer(String peerAddress) async {
+  Future<void> connectToPeer(String peerAddress, {int? port}) async {
     try {
       final result = await platform.invokeMethod(
         'connectToPeer',
         {
           'address': peerAddress,
+          if (port != null) 'port': port,
         },
       );
       log(result.toString());
