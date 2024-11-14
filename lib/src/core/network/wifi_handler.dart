@@ -34,18 +34,42 @@ class WifiHandler {
   }
 
   Future<void> sendData(String ipAddress, int port, List<int> data) async {
-    final socket = await Socket.connect(ipAddress, port);
-    socket.add(data);
-    await socket.flush();
-    await socket.close();
+    try {
+      final socket = await Socket.connect(
+        ipAddress,
+        port,
+        timeout: Duration(seconds: 5),
+      );
+      socket.add(data);
+      await socket.flush();
+      await socket.close();
+      log('Data sent to $ipAddress:$port');
+    } catch (e) {
+      log("Failed to send data: $e");
+    }
   }
 
   Future<void> startServer(int port) async {
-    final server = await ServerSocket.bind(InternetAddress.anyIPv4, port);
-    await for (var socket in server) {
-      socket.listen((data) {
-        // Handle received data here
-      });
+    try {
+      final ServerSocket server = await ServerSocket.bind(
+        InternetAddress.anyIPv4,
+        port,
+      );
+      log("Server started on port $port");
+
+      await for (Socket socket in server) {
+        log('New connection from ${socket.remoteAddress.address}:${socket.remotePort}');
+        socket.listen((data) {
+          log('Received data: $data');
+          // Handle received data here
+        }, onError: (error) {
+          log("Connection error: $error");
+        }, onDone: () {
+          log("Client done and disconnected");
+        });
+      }
+    } catch (e) {
+      log("Failed to start server: $e");
     }
   }
 }
