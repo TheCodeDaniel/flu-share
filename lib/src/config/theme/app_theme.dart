@@ -33,19 +33,30 @@ class AppTheme {
       color: AppColors.kWhite,
       elevation: 0,
       centerTitle: false,
-      iconTheme: const IconThemeData(color: Colors.black),
+      iconTheme: const IconThemeData(
+        color: Colors.black,
+        size: 20,
+      ),
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 17.5,
+      ),
     ),
 
     /// Text
     textTheme: buildTextTheme(ThemeData.light().textTheme),
-
     buttonTheme: ButtonThemeData(
       buttonColor: AppColors.primaryColor,
     ),
-
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: AppColors.primaryColor,
       elevation: 0,
+    ),
+    listTileTheme: ListTileThemeData(
+      tileColor: AppColors.kGrey,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
     ),
   );
 }
