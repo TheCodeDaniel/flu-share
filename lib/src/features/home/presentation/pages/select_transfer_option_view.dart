@@ -1,7 +1,7 @@
 import 'package:flushare/src/core/utils/navigation_extension.dart';
 import 'package:flushare/src/features/home/presentation/widgets/receive_section_view.dart';
 import 'package:flushare/src/features/home/presentation/widgets/send_section_view.dart';
-import 'package:flushare/src/features/settings/pages/settings_view.dart';
+import 'package:flushare/src/features/settings/presentation/pages/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
