@@ -1,10 +1,12 @@
 import 'package:flushare/src/config/theme/app_theme.dart';
 import 'package:flushare/src/features/home/presentation/pages/select_transfer_option_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 class AppInit {
   static void initializeAll() async {
     AppTheme().systemUiOverlay;
+    FlutterBluePlus.setLogLevel(LogLevel.verbose, color: true);
   }
 }
 
