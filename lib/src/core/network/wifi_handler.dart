@@ -5,11 +5,11 @@ import 'package:flushare/src/core/constants/bool_modes.dart';
 import 'package:flutter/services.dart';
 
 class WifiHandler {
-  static const platform = MethodChannel('com.flushare/wifi');
+  static const MethodChannel platform = MethodChannel('com.flushare/wifi');
 
   Future<void> startWifiDirect() async {
     try {
-      final result = await platform.invokeMethod(
+      final dynamic result = await platform.invokeMethod(
         kIsDesktop ? 'startNetworkListener' : 'startWifiDirect',
       );
       log(result.toString()); // Output: "Discovery started"
@@ -20,7 +20,7 @@ class WifiHandler {
 
   Future<void> connectToPeer(String peerAddress, {int? port}) async {
     try {
-      final result = await platform.invokeMethod(
+      final dynamic result = await platform.invokeMethod(
         'connectToPeer',
         {
           'address': peerAddress,
@@ -35,7 +35,7 @@ class WifiHandler {
 
   Future<void> sendData(String ipAddress, int port, List<int> data) async {
     try {
-      final socket = await Socket.connect(
+      final Socket socket = await Socket.connect(
         ipAddress,
         port,
         timeout: Duration(seconds: 5),
