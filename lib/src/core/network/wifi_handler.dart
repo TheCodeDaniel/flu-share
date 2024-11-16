@@ -7,6 +7,37 @@ import 'package:flutter/services.dart';
 class WifiHandler {
   static const MethodChannel platform = MethodChannel('com.flushare/wifi');
 
+  Future<void> scanForDevices() async {
+    try {
+      final address = InternetAddress('255.255.255.255');
+      final port = 12345; // Port to send/receive messages
+
+      final socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 0);
+
+      // Send a broadcast message
+      socket.send('Hello, device!'.codeUnits, address, port);
+      log('Sent broadcast message to $address:$port');
+
+      // Listen for responses from devices
+      socket.listen((RawSocketEvent event) async {
+        if (event == RawSocketEvent.read) {
+          final datagram = socket.receive();
+          if (datagram != null) {
+            final deviceMessage = String.fromCharCodes(datagram.data);
+            log('Received response: $deviceMessage');
+            // Handle device response (e.g., log IP or connect)
+          }
+        }
+      });
+
+      // Optional: Stop listening after a timeout
+      await Future.delayed(Duration(seconds: 5));
+      socket.close();
+    } catch (e) {
+      log("Failed to scan for devices: $e");
+    }
+  }
+
   Future<void> startWifiDirect() async {
     try {
       final dynamic result = await platform.invokeMethod(
