@@ -1,7 +1,7 @@
 import 'package:flushare/src/core/constants/bool_modes.dart';
 import 'package:flushare/src/core/constants/strings.dart';
 import 'package:flushare/src/core/utils/navigation_extension.dart';
-import 'package:flushare/src/features/scan/presentation/pages/blue_scan_view.dart';
+import 'package:flushare/src/features/scan/presentation/pages/device_scan_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -12,7 +12,7 @@ class SendSectionView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return GestureDetector(
-      onTap: () => context.push(BlueScanView()),
+      onTap: () => context.push(DeviceScanView()),
       child: Container(
         height: kIsDesktop ? size.height * 0.5 : size.height * 0.4,
         width: size.width,
