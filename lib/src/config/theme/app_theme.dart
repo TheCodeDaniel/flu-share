@@ -58,6 +58,9 @@ class AppTheme {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: Colors.black,
+    ),
   );
 }
 

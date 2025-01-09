@@ -66,7 +66,7 @@ class _DeviceScanViewState extends State<DeviceScanView> {
           } else if (state is DeviceDiscoveryFailure) {
             return Center(child: Text("Error: ${state.error}"));
           }
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator.adaptive());
         },
       ),
     );
