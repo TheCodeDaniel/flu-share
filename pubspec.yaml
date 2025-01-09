@@ -33,6 +33,7 @@ dependencies:
   # state management and dependecy managers
   flutter_bloc: ^8.1.6
   get_it: ^8.0.2
+  provider: ^6.1.2
 
   # general/ utilities
   flutter_lints: ^5.0.0
