@@ -1,4 +1,4 @@
-package com.example.flushare
+package com.flushare
 
 import io.flutter.embedding.android.FlutterActivity
 
