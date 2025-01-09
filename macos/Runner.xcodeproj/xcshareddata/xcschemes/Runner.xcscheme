@@ -13,11 +13,11 @@
             buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
-               BuildableIdentifier="primary"
-               BlueprintIdentifier="33CC10EC2044A3C60003C045"
-               BuildableName="flushare.app"
-               BlueprintName="Runner"
-               ReferencedContainer="container:Runner.xcodeproj">
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+               BuildableName = "flushare.app"
+               BlueprintName = "Runner"
+               ReferencedContainer = "container:Runner.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,11 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <MacroExpansion>
          <BuildableReference
-            BuildableIdentifier="primary"
-            BlueprintIdentifier="33CC10EC2044A3C60003C045"
-            BuildableName="flushare.app"
-            BlueprintName="Runner"
-            ReferencedContainer="container:Runner.xcodeproj">
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+            BuildableName = "flushare.app"
+            BlueprintName = "Runner"
+            ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -63,11 +63,11 @@
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
-            BuildableIdentifier="primary"
-            BlueprintIdentifier="33CC10EC2044A3C60003C045"
-            BuildableName="flushare.app"
-            BlueprintName="Runner"
-            ReferencedContainer="container:Runner.xcodeproj">
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+            BuildableName = "flushare.app"
+            BlueprintName = "Runner"
+            ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -80,11 +80,11 @@
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
-            BuildableIdentifier="primary"
-            BlueprintIdentifier="33CC10EC2044A3C60003C045"
-            BuildableName="flushare.app"
-            BlueprintName="Runner"
-            ReferencedContainer="container:Runner.xcodeproj">
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "33CC10EC2044A3C60003C045"
+            BuildableName = "flushare.app"
+            BlueprintName = "Runner"
+            ReferencedContainer = "container:Runner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
