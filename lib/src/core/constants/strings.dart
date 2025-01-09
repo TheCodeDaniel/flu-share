@@ -8,4 +8,6 @@ class Strings {
   static String settings = "Settings";
   static String storageLocation = "Storage location";
   static String sendAFeedback = "Send a feedback";
+
+  static String noDevicesFound = "No Devices Found";
 }

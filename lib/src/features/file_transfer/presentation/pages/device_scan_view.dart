@@ -1,3 +1,5 @@
+import 'package:flushare/src/core/constants/strings.dart';
+import 'package:flushare/src/features/file_transfer/presentation/pages/bloc/file_transfer_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,24 +20,41 @@ class _DeviceScanViewState extends State<DeviceScanView> {
       appBar: AppBar(
         title: Text("Find Nearby Devices"),
       ),
-      body: BlocBuilder<FileTransferBloc, FileTransferState>(
-        builder: (context, state) {
-          if (state.errorMessage != null) {
-            return Center(child: Text(state.errorMessage!));
+      body: BlocConsumer<FileTransferBloc, FileTransferState>(
+        listener: (context, state) {
+          if (state is DeviceDiscoveryFailure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.error)),
+            );
           }
-
-          return ListView.builder(
-            itemCount: state.devices.length,
-            itemBuilder: (context, index) {
-              final device = state.devices[index];
-              return ListTile(
-                title: Text(device.name),
-                subtitle: Text(device.ipAddress),
-                onTap: () {
-                  // Add sending logic here
-                },
+        },
+        builder: (context, state) {
+          if (state is DeviceDiscoveryLoading) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state is DeviceDiscoverySuccess) {
+            if (state.devices.isEmpty) {
+              Center(
+                child: Text(Strings.noDevicesFound),
               );
-            },
+            }
+            return ListView.builder(
+              itemCount: state.devices.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(state.devices[index]),
+                );
+              },
+            );
+          } else if (state is DeviceDiscoveryFailure) {
+            return Center(child: Text("Error: ${state.error}"));
+          }
+          return Center(
+            child: ElevatedButton(
+              onPressed: () {
+                context.read<FileTransferBloc>().add(DiscoverDevices());
+              },
+              child: Text("Discover Devices"),
+            ),
           );
         },
       ),

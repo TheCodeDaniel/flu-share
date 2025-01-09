@@ -39,6 +39,7 @@ dependencies:
 
   # general/ utilities
   flutter_lints: ^5.0.0
+  equatable: ^2.0.7
 
 dev_dependencies:
   flutter_launcher_icons: "^0.14.1"

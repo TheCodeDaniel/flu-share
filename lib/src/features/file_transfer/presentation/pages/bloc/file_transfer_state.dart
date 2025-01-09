@@ -1,21 +1,30 @@
-import '../../../domain/entities/device.dart';
+import 'package:equatable/equatable.dart';
 
-class FileTransferState {
-  final List<Device> devices;
-  final String? errorMessage;
+abstract class FileTransferState extends Equatable {
+  const FileTransferState();
 
-  FileTransferState({
-    this.devices = const [],
-    this.errorMessage,
-  });
+  @override
+  List<Object?> get props => [];
+}
 
-  FileTransferState copyWith({
-    List<Device>? devices,
-    String? errorMessage,
-  }) {
-    return FileTransferState(
-      devices: devices ?? this.devices,
-      errorMessage: errorMessage,
-    );
-  }
+class FileTransferInitial extends FileTransferState {}
+
+class DeviceDiscoveryLoading extends FileTransferState {}
+
+class DeviceDiscoverySuccess extends FileTransferState {
+  final List<String> devices;
+
+  const DeviceDiscoverySuccess(this.devices);
+
+  @override
+  List<Object?> get props => [devices];
+}
+
+class DeviceDiscoveryFailure extends FileTransferState {
+  final String error;
+
+  const DeviceDiscoveryFailure(this.error);
+
+  @override
+  List<Object?> get props => [error];
 }

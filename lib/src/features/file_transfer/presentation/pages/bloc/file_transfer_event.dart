@@ -1,12 +1,10 @@
-import '../../../domain/entities/device.dart';
+import 'package:equatable/equatable.dart';
 
-abstract class FileTransferEvent {}
+abstract class FileTransferEvent extends Equatable {
+  const FileTransferEvent();
 
-class ScanDevicesEvent extends FileTransferEvent {}
-
-class SendFileEvent extends FileTransferEvent {
-  final Device device;
-  final String filePath;
-
-  SendFileEvent(this.device, this.filePath);
+  @override
+  List<Object?> get props => [];
 }
+
+class DiscoverDevices extends FileTransferEvent {}
