@@ -1,8 +1,6 @@
-import 'package:flushare/src/core/constants/strings.dart';
 import 'package:flushare/src/features/file_transfer/presentation/pages/bloc/file_transfer_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'bloc/file_transfer_bloc.dart';
 import 'bloc/file_transfer_state.dart';
 
@@ -14,6 +12,13 @@ class DeviceScanView extends StatefulWidget {
 }
 
 class _DeviceScanViewState extends State<DeviceScanView> {
+  @override
+  void initState() {
+    super.initState();
+    // Automatically trigger the discovery of devices when the page is opened
+    context.read<FileTransferBloc>().add(DiscoverDevices());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +38,21 @@ class _DeviceScanViewState extends State<DeviceScanView> {
             return Center(child: CircularProgressIndicator());
           } else if (state is DeviceDiscoverySuccess) {
             if (state.devices.isEmpty) {
-              Center(
-                child: Text(Strings.noDevicesFound),
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.search_off, size: 50, color: Colors.grey),
+                    SizedBox(height: 16),
+                    Text(
+                      "No devices found",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
               );
             }
             return ListView.builder(
@@ -48,14 +66,7 @@ class _DeviceScanViewState extends State<DeviceScanView> {
           } else if (state is DeviceDiscoveryFailure) {
             return Center(child: Text("Error: ${state.error}"));
           }
-          return Center(
-            child: ElevatedButton(
-              onPressed: () {
-                context.read<FileTransferBloc>().add(DiscoverDevices());
-              },
-              child: Text("Discover Devices"),
-            ),
-          );
+          return Center(child: CircularProgressIndicator());
         },
       ),
     );
