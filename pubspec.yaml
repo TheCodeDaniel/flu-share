@@ -23,6 +23,8 @@ dependencies:
   encrypt: ^5.0.3
   flutter_secure_storage: ^4.2.1
   dio: ^5.7.0
+  network_info_plus: ^6.1.2
+  ping_discover_network_forked: ^0.0.1
 
   # design and animated
   flutter_animate: ^4.5.0
