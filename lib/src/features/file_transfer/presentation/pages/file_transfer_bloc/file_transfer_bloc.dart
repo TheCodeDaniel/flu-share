@@ -16,9 +16,7 @@ class FileTransferBloc extends Bloc<FileTransferEvent, FileTransferState> {
 
   // request network permission
   Future<bool> requestLocationPermission() async {
-    if (Platform.isMacOS) {
-      return true; // Assuming permission is not required for macOS
-    }
+    if (Platform.isMacOS) return true;
 
     final status = await Permission.locationWhenInUse.request();
     if (status.isGranted) {
@@ -87,7 +85,10 @@ class FileTransferBloc extends Bloc<FileTransferEvent, FileTransferState> {
 
       // Send message to the multicast address
       socket.send(
-          Uint8List.fromList(uniqueToken.codeUnits), multicastAddress, 8080);
+        Uint8List.fromList(uniqueToken.codeUnits),
+        multicastAddress,
+        8080,
+      );
 
       // Listen for responses (this part depends on your devices that should be listening to the multicast address)
       socket.listen((RawSocketEvent event) {

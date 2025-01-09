@@ -1,8 +1,8 @@
-import 'package:flushare/src/features/file_transfer/presentation/pages/bloc/file_transfer_event.dart';
+import 'file_transfer_bloc/file_transfer_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'bloc/file_transfer_bloc.dart';
-import 'bloc/file_transfer_state.dart';
+import 'file_transfer_bloc/file_transfer_bloc.dart';
+import 'file_transfer_bloc/file_transfer_state.dart';
 
 class DeviceScanView extends StatefulWidget {
   const DeviceScanView({super.key});
