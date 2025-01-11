@@ -8,6 +8,11 @@ extension ContextNavigationExtension on BuildContext {
     );
   }
 
+  /// Pushes a new screen on navigaiton stack via named
+  Future<T?> pushNamed<T>(String name, {Object? arguments}) {
+    return Navigator.of(this).pushNamed(name, arguments: arguments);
+  }
+
   /// Replaces the current screen with a new one.
   Future<T?> pushReplacement<T, TO>(Widget page) {
     return Navigator.of(this).pushReplacement(
